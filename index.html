@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REWEAR — Piața de haine second-hand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#" class="logo">REWEAR</a>
+      <nav class="main-nav">
+        <a href="#produse">Produse</a>
+        <a href="#cum-functioneaza">Cum funcționează</a>
+        <a href="#adauga" class="nav-cta">Vinde o haină</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">Piață locală, second-hand</span>
+        <h1>Hainele tale bune merită o a doua garderobă.</h1>
+        <p>REWEAR e locul unde vinzi ce nu mai porți și găsești piese unice, la prețuri corecte, direct de la oameni din orașul tău.</p>
+        <div class="hero-actions">
+          <a href="#produse" class="btn btn-primary">Vezi produsele</a>
+          <a href="#adauga" class="btn btn-ghost">Adaugă un anunț</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">1.240</span>
+          <span class="stat-label">piese listate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">18</span>
+          <span class="stat-label">orașe active</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">96%</span>
+          <span class="stat-label">vânzători mulțumiți</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="produse">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Ultimele piese adăugate</h2>
+        <div class="filters" id="filters">
+          <button class="filter-btn active" data-cat="toate">Toate</button>
+          <button class="filter-btn" data-cat="tricouri">Tricouri</button>
+          <button class="filter-btn" data-cat="geci">Geci</button>
+          <button class="filter-btn" data-cat="rochii">Rochii</button>
+          <button class="filter-btn" data-cat="pantaloni">Pantaloni</button>
+          <button class="filter-btn" data-cat="incaltaminte">Încălțăminte</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- cardurile sunt generate din script.js -->
+      </div>
+
+      <p class="empty-state" id="emptyState" hidden>Nu am găsit piese în această categorie momentan.</p>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="cum-functioneaza">
+    <div class="wrap">
+      <h2>Cum funcționează</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">01</span>
+          <h3>Fotografiezi haina</h3>
+          <p>Trei poze clare, la lumină naturală — atât ai nevoie ca să pornești.</p>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <h3>Completezi anunțul</h3>
+          <p>Mărime, stare, preț. Formularul de mai jos durează sub 2 minute.</p>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <h3>Te întâlnești sau trimiți</h3>
+          <p>Alegi predare personală în oraș sau expediere prin curier.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="add-listing" id="adauga">
+    <div class="wrap add-listing-inner">
+      <div class="add-listing-text">
+        <h2>Adaugă o haină spre vânzare</h2>
+        <p>Completează formularul — anunțul apare instant mai jos, doar în sesiunea ta, ca previzualizare.</p>
+      </div>
+
+      <form class="listing-form" id="listingForm">
+        <div class="field">
+          <label for="title">Titlu anunț</label>
+          <input type="text" id="title" name="title" placeholder="ex: Geacă din piele, mărime M" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="category">Categorie</label>
+            <select id="category" name="category" required>
+              <option value="tricouri">Tricouri</option>
+              <option value="geci">Geci</option>
+              <option value="rochii">Rochii</option>
+              <option value="pantaloni">Pantaloni</option>
+              <option value="incaltaminte">Încălțăminte</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="size">Mărime</label>
+            <input type="text" id="size" name="size" placeholder="ex: M, 38, 42" required>
+          </div>
+          <div class="field">
+            <label for="price">Preț (lei)</label>
+            <input type="number" id="price" name="price" min="1" placeholder="ex: 60" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="description">Descriere</label>
+          <textarea id="description" name="description" rows="3" placeholder="Stare, defecte vizibile, motiv de vânzare..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Publică anunțul</button>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="logo">REWEAR</span>
+      <p>Proiect de portofoliu — piață second-hand pentru piața românească.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
